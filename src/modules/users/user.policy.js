@@ -1,0 +1,6 @@
+import { ROLES, PERMISSIONS } from "../../common/constants.js";
+
+const RBAC = {
+  [ROLES.ADMIN]: [PERMISSIONS.CREATE_USER, PERMISSIONS.VIEW_USER],
+  [ROLES.LAWYER]: [PERMISSIONS.VIEW_USER]
+};
