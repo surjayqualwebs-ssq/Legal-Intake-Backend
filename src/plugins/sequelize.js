@@ -5,6 +5,7 @@ import fp from "fastify-plugin";
 import { Sequelize, DataTypes } from "sequelize";
 import dbConfig from "../config/database.cjs";
 import { env } from "../config/env.js";
+import { ROLES } from "../common/constants.js";
 
 // 🔴 IMPORT MODELS
 import UserModel from "../modules/users/user.model.js";
@@ -59,7 +60,7 @@ export default fp(async (fastify) => {
       await User.create({
         email: adminEmail,
         password: hashedPassword,
-        role: "ADMIN"
+        role: ROLES.ADMIN
       });
 
       console.log("✅ Admin user seeded");
